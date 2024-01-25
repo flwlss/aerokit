@@ -1,46 +1,66 @@
 @import "../../mixins.scss";
 @import "../../variables.scss";
 
-.header {
+.container {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 80px;
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  
+    h1 {
+      @include H1-m;
+    }
+    span {
+      @include T1-M-d;
+    }
+  }
+  
+  .managers {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    align-content: center;
+    gap: 28px;
+  }
 
-  h1 {
-    @include H1-m;
-  }
-  span {
-    @include T1-M-d;
-  }
 }
 
-.managers {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  justify-items: center;
-  align-content: center;
-  gap: 28px;
-}
+
 
 @media screen and (min-width: $tablet) {
-  .managers {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 48px;
-  }
-  .header {
-    h1 {
-      @include H1-t;
+  .container {
+    max-width: 430px;
+    margin: 0 auto;
+
+    .managers {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 48px;
     }
+    .header {
+      h1 {
+        @include H1-t;
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktop-small) {
+  .container {
+    max-width: none;
   }
 }
 
 @media screen and (min-width: $desktop-medium) {
-  .managers {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .header {
-    h1 {
-      @include H1-d;
+  .container {
+    .managers {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .header {
+      h1 {
+        @include H1-d;
+      }
     }
   }
 }

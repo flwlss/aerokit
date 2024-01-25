@@ -31,6 +31,10 @@
             text-decoration: underline;
             text-underline-offset: 8px;
           }
+
+          &:not(.active):hover {
+            color: black;
+          }
         }
       }
     }

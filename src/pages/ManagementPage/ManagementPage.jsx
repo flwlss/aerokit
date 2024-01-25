@@ -38,7 +38,7 @@ const managers = [
 
 export default function ManagementPage() {
   return (
-    <>
+    <div className={styles.container}>
       <header className={styles.header}>
         <span>О нас</span>
         <h1>Руководство</h1>
@@ -48,6 +48,6 @@ export default function ManagementPage() {
           managers.map((manager, i) => <ManagerCard key={i} name={manager.name} post={manager.post} bgUrl={manager.bgUrl} />)
         }
       </div>
-    </>
+    </div>
   )
 }

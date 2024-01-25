@@ -21,7 +21,7 @@ export default function Navigation() {
         ref.current.style.backgroundColor = "#26282E";
       } 
     } else {
-      ref.current.style.backgroundColor = "";
+      ref.current.style.backgroundColor = "#26282E99";
     }
   }, [location])
 

@@ -11,12 +11,14 @@
   .subNav {
     display: flex;
     flex-direction: column;
-    gap: 32px; 
+    gap: 32px;
+    width: 173px;
 
     .subNavItem {
       display: flex;
       gap: 24px;
       align-items: center;
+      height: 32px;
 
       svg {
         display: none;
@@ -37,7 +39,7 @@
         }
       }
 
-      &:hover {
+      &:not(.active):hover {
         p {
           color: $primary-text;
           text-decoration: underline;
