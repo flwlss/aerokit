@@ -1,0 +1,50 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  label, input {
+    @include T3-d;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 4px;
+    color: $primary-bg;
+  }
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid $secondary-bg;
+    color: $secondary-text;
+    padding: 12px;
+    border-radius: 8px;
+
+    &:focus {
+      border-color: $primary-bg;
+    }
+  }
+
+  .cells {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .submitBtnContainer {
+    margin-top: 70px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .form {
+    .cells {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

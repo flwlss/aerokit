@@ -1,0 +1,65 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.navCard {
+  max-width: 333px;
+  height: 181px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-size: cover;
+  padding: 28px;
+
+  .description {
+    @include L-M-d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &:hover {
+    .description {
+      p {
+        color: $primary-active-btn;
+      }
+      svg {
+        rect {
+          stroke: $primary-active-btn;
+        }
+        path {
+          fill: $primary-active-btn;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .navCard {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: $desktop-small) and (min-height: 705px) {
+    .navCard {
+      width: 270px;
+    }
+  }
+
+@media screen and (min-width: $desktop-medium) {
+  .navCard {
+    width: 333px;
+  }
+}
+
+@media screen and (min-width: $desktop-medium) and (min-height:540px) {
+  .navCard {
+    width: 270px;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-height: 720px) {
+  .navCard {
+    width: 333px;
+  }
+}

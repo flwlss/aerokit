@@ -1,0 +1,91 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.header {
+  position: sticky;
+  top: 0;
+  height: 88px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  z-index: 3;
+
+  .logo {
+    img {
+      width: 84px;
+      height: 25px;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    .links {
+      display: none;
+      justify-content: space-between;
+      gap: 48px;
+  
+      .link {
+        @include L-M-d;
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .burger {
+      display: block;
+      cursor: pointer;
+    }
+  }
+  
+}
+
+
+@media screen and (min-width: $tablet) {
+  .header {
+  height: 100px;
+  padding: 0 40px;
+
+  
+    .logo {
+      img {
+        width: 141px;
+        height: 42px;
+      }
+    }
+  
+    .navigation {
+      gap: 64px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-small) {
+  .header {
+      
+    .navigation {
+      gap: 80px;
+
+      .burger {
+        display: none;
+      }
+
+      .links {
+        display: flex;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .header {
+    padding: 0 70px; 
+  }   
+}

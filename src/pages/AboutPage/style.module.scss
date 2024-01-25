@@ -1,0 +1,125 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  padding: 52px 16px 180px 16px;
+  gap: 112px;
+
+  .subNav {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; 
+
+    .subNavItem {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+
+      svg {
+        display: none;
+      }
+
+      &.active {
+        p {
+          color: $primary-active-btn;
+        }
+        svg {
+          display: block;
+          rect {
+            stroke: $primary-active-btn;
+          }
+          path {
+            fill: $primary-active-btn;
+          }
+        }
+      }
+
+      &:hover {
+        p {
+          color: $primary-text;
+          text-decoration: underline;
+        }
+        svg {
+          rect {
+            stroke: $primary-text;
+          }
+          path {
+            fill: $primary-text;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .bgImg {
+    position: absolute;
+    width: 253px;
+    height: 600px;
+    object-fit: cover;
+    right: 0;
+    bottom: 48px;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    padding: 100px 40px 180px 40px;
+    .bgImg {
+      width: 360px;
+      bottom: 123px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-small) {
+  .container {
+    flex-direction: row;
+    gap: 157px;
+
+    .content {
+      padding-top: 32px;
+    }
+    .bgImg {
+      width: 400px;
+      bottom: 38px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-medium) {
+  .container {
+    flex-direction: row;
+    gap: 157px;
+    padding-top: 170px;
+    padding-bottom: 137px;
+
+    .bgImg {
+      width: 760px;
+      height: 800;
+      bottom: 94px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .container {
+    gap: 197px;
+    padding: 170px 70px 137px 70px;
+
+    .bgImg {
+      width: 1170px;
+      height: 800;
+      bottom: 150px;
+    }
+  }
+}

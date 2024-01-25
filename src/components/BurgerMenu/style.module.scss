@@ -1,0 +1,71 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.burgerMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 528px;
+  padding: 100px 40px 0 0;
+  background-color: $primary-text;
+  color: $primary-bg;
+  z-index: 5;
+
+
+  .logo {
+    text-align: right;
+    margin-bottom: 140px;
+  }
+
+  .navigation {
+    .links {
+      display: flex;
+      gap: 40px;
+      align-items: end;
+      flex-direction: column;
+
+      .link {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        svg {
+          display: none;
+          transform: rotate(180deg);
+          rect {
+            stroke: $primary-active-btn;
+          }
+          path {
+            fill: $primary-active-btn;
+          }
+        }
+        span {
+          @include H2-m;
+          color: $primary-bg;
+        } 
+
+        &.active {
+          span {
+            color: $primary-active-btn;
+          }
+          svg {
+            display: block;
+          }
+        }
+      }
+
+    }
+
+    
+  }
+  
+  .exitBtn {
+    position: absolute;
+    top: 40px;
+    left: 16px;
+    cursor: pointer;
+  }
+
+}

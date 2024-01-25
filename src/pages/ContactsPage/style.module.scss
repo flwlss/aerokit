@@ -1,0 +1,240 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  padding: 82px 16px 54px 16px;
+  gap: 40px;
+
+  .line {
+    position: relative;
+    right: 16px;
+    width: 140px;
+    border: 1px solid $primary-text;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    grid-template-areas:
+      "info"
+      "map"
+      "feed";
+
+    .info {
+      grid-area: info;
+
+      h2 {
+        @include H2-m;
+      }
+
+      .description {
+        margin-top: 32px;
+        p {
+          @include T1-M-m;
+        }
+        .general,
+        .warehouses {
+          margin-bottom: 2em;
+        }
+
+        .warehouses {
+          .bold {
+            @include T1-B-m;
+          }
+        }
+
+        .phone {
+          margin-bottom: 1em;
+        }
+      }
+    }
+
+    .feedback {
+      grid-area: feed;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .head {
+        h2 {
+          @include H2-t;
+          margin-bottom: 16px;
+        }
+        p {
+          @include T2-d;
+          max-width: 480px;
+        }
+      }
+
+      form {
+        @include T3-d;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        column-gap: 16px;
+
+        input,
+        textarea {
+          width: 100%;
+          background-color: transparent;
+          outline: none;
+          border: 1px solid #aeaeae;
+          padding: 12px;
+          border-radius: 8px;
+
+          &:focus {
+            border-color: $primary-text;
+          }
+        }
+
+        label {
+          display: block;
+          margin-bottom: 4px;
+        }
+
+        .contacts {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .formField {
+            input {
+              min-width: 283px;
+            }
+          }
+        }
+
+        .feedbackText {
+          display: flex;
+          flex-direction: column;
+
+          textarea {
+            resize: none;
+            min-width: 313px;
+            height: 100%;
+            min-height: 161px;
+          }
+        }
+      }
+    }
+
+    .map {
+      grid-area: map;
+      text-align: right;
+      display: flex;
+      justify-content: end;
+      .img {
+        position: relative;
+        left: 16px;
+        width: 278px;
+        height: 267px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    padding-top: 100px;
+    padding-left: 40px;
+
+    .line {
+      right: 40px;
+    }
+    .content {
+      .info {
+        h2 {
+          @include H2-t;
+        }
+        .description {
+          p {
+            @include T1-M-d;
+          }
+          .warehouses {
+            .bold {
+              @include T1-B-d;
+            }
+          }
+        }
+      }
+      .feedback {
+        form {
+          max-width: 400px;
+          .feedbackText {
+            textarea {
+              min-height: 140px;
+            }
+          }
+        }
+      }
+      .map {
+        .img {
+          left: 16px;
+          width: 530px;
+          height: 510px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-small) {
+  .container {
+    .content {
+      row-gap: 80px;
+      grid-template-areas:
+      "info map"
+      "feed map";
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-medium) {
+  .container {
+    .content {
+      row-gap: 80px;
+      grid-template-columns: auto auto;
+      grid-template-areas:
+      "info map"
+      "feed map";
+
+      .feedback {
+        form {
+          flex-direction: row;
+          .feedbackText {
+            textarea {
+              min-height: auto;
+            }
+          }
+        }
+      }
+      .map {
+        .img {
+          width: 700px;
+          height: 486px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .container {
+    padding-left: 70px;
+    .line {
+      right: 70px;
+    }
+    .content {
+      .map {
+        .img {
+          width: 1000px;
+          height: 486px;
+        }
+      }
+    }
+  }
+}

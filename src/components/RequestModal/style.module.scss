@@ -1,0 +1,75 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.requestModalContainer {
+  min-height: 100%;
+  .content {
+    position: relative;
+    max-width: $tablet;
+    min-width: 320px;
+    background-color: $primary-text;
+    padding: 80px 16px 113px 16px;
+
+    header {
+      margin-bottom: 32px;
+      h2 {
+        @include H2-m;
+        color: $primary-bg;
+        margin-bottom: 32px;
+      }
+      .formToggle {
+        display: flex;
+        gap: 24px;
+
+        span {
+          @include T1-M-d;
+          color: $secondary-text;
+          cursor: pointer;
+
+          &.active {
+            color: $primary-active-btn;
+            text-decoration: underline;
+            text-underline-offset: 8px;
+          }
+        }
+      }
+    }
+
+    .exit {
+      position: absolute;
+      top: 40px;
+      right: 16px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+@media screen and (min-width: $tablet) {
+  .requestModalContainer {
+    .content {
+      margin: 0 auto;
+      padding: 60px 83px 142px 83px;
+
+      .exit {
+        top: 46px;
+        right: 83px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-small) {
+  .requestModalContainer {
+    display: flex;
+    align-items: center;
+    .content {
+      width: 682px;
+      padding: 40px 40px 52px 40px;
+      .exit {
+        top: 40px;
+        right: 40px;
+      }
+    }
+  }
+}

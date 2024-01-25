@@ -1,0 +1,28 @@
+@import './variables.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+
+* {
+  @include T1-M-d;
+  margin: 0;
+  padding: 0;
+  color: $primary-text;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.ymaps-2-1-79-gotoymaps__text, .ymaps-2-1-79-copyright__text {
+  color: black;
+}
+
+body {
+  height: 100vh;
+  min-height: 100vh;
+  max-width: 100vw;
+  background-color: $primary-bg;
+}
+
+#root {
+  height: 100%;
+}

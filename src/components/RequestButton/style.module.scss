@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.button {
+  @include L-M-d;
+  width: 100%;
+  border: none;
+  color: $primary-text;
+  padding: 20px 0;
+  border-radius: 8px;
+  background-color: $primary-active-btn;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secondary-active-btn;
+  }
+}

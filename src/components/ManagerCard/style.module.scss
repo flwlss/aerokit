@@ -1,0 +1,54 @@
+@import '../../mixins.scss';
+@import '../../variables.scss';
+
+.cardContainer {
+  width: min-content;
+  justify-self: center;
+
+  img {
+    width: 358px;
+    height: 403px;
+  }  
+  .description {
+    position: relative;
+    bottom: 20px;
+    padding-left: 14px;
+
+    .name {
+      @include H2-m;
+    }
+  
+    .post {
+      @include T2-d;
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .cardContainer {
+    img {
+      width: 234px;
+      height: 226px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-small) {
+  .cardContainer {
+    img {
+      width: 270px;
+      height: 270px;
+    }
+
+    .description {
+      .name {
+        @include H2-d;
+      }
+    
+      .post {
+        @include T2-d;
+      }
+    }
+  }
+}

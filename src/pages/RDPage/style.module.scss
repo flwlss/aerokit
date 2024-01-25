@@ -1,0 +1,133 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 82px 16px 347px 16px;
+    
+  .content {
+    display: flex;
+    flex-direction: column;
+  
+    .line {
+      position: relative;
+      right: 16px;
+      width: 140px;
+      border: 1px solid $primary-text;
+    }
+  
+    .intro {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      margin-top: 40px;
+
+      h1 {
+        @include H1-m;
+        max-width: 804px;
+      }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  }
+
+  .bgImg {
+    position: absolute;
+    width: 345px;
+    height: 445px;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    padding: 100px 16px 306px 40px;
+    .content {
+      .line {
+        right: 40px;
+      }
+      .intro {
+        gap: 50px;
+
+        h1 {
+          @include H1-t;
+        }
+        .description {
+          max-width: 540px;
+        }
+      }
+    }
+    .bgImg {
+      width: 484px;
+      height: 668px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-small) {
+  .container {
+    padding: 100px 16px 128px 40px;
+    .content {
+      .intro {
+        gap: 40px;
+
+        h1 {
+          @include H1-d;
+        }
+        .description {
+          max-width: 689px;
+        }
+      }
+    }
+    .bgImg {
+      width: 484px;
+      height: 588px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-medium) {
+  .container {
+    padding: 200px 16px 306px 70px;
+    .content {
+      .line {
+        right: 70px;
+      }
+      .intro {
+        .description {
+          max-width: 838px;
+        }
+      }
+    }
+    .bgImg {
+      width: 720px;
+      height: 894px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .container {
+    padding-bottom: 362px;
+    .bgImg {
+      width: 800px;
+      height: 950px;
+    }
+  }
+}
