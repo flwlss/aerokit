@@ -13,7 +13,7 @@ export default function MainPage() {
           <h1>
             Производство <span>и ремонт</span>
             <br />
-            авиационных интерьерных компонентов
+            авиационных компонентов
           </h1>
           <div
             className={styles.takeOrder}

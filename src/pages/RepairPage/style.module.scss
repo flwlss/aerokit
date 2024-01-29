@@ -35,12 +35,6 @@
         flex-direction: column;
         gap: 12px;
       }
-
-      .column1 {
-        li:first-of-type {
-          color: $primary-active-btn;
-        }
-      }
     }
   }
 

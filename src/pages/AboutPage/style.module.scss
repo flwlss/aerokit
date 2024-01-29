@@ -5,7 +5,7 @@
   @include container;
   display: flex;
   flex-direction: column;
-  padding: 52px 16px 180px 16px;
+  padding: 52px 16px 0 16px;
   gap: 112px;
 
   .subNav {
@@ -64,6 +64,7 @@
 
   .bgImg {
     position: absolute;
+    top: 192px;
     width: 253px;
     height: 600px;
     object-fit: cover;
@@ -75,7 +76,7 @@
 
 @media screen and (min-width: $tablet) {
   .container {
-    padding: 100px 40px 180px 40px;
+    padding: 100px 40px 0 40px;
     .bgImg {
       width: 360px;
       bottom: 123px;
@@ -103,7 +104,6 @@
     flex-direction: row;
     gap: 157px;
     padding-top: 170px;
-    padding-bottom: 137px;
 
     .bgImg {
       width: 760px;
@@ -116,7 +116,7 @@
 @media screen and (min-width: $desktop-large) {
   .container {
     gap: 197px;
-    padding: 170px 70px 137px 70px;
+    padding: 170px 70px 0 70px;
 
     .bgImg {
       width: 1170px;
