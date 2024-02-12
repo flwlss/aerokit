@@ -87,6 +87,7 @@
 
 @media screen and (min-width: $tablet) {
   .container {
+    padding-bottom: 120px;
     flex-direction: row;
     margin: 0 auto;
     .info {
