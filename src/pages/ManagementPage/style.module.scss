@@ -2,23 +2,12 @@
 @import "../../variables.scss";
 
 .container {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 80px;
-  padding-bottom: 180px;
-  .header {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  
-    h1 {
-      @include H1-m;
-    }
-    span {
-      @include T1-M-d;
-    }
-  }
-  
+  padding-bottom: 124px;
+    
   .managers {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -33,31 +22,27 @@
 
 @media screen and (min-width: $tablet) {
   .container {
-    max-width: 430px;
-    margin: 0 auto;
-    padding-bottom: 185px;
+    max-width: 516px;
+    margin-left: 84px;
+    padding-bottom: 74px;
 
     .managers {
       grid-template-columns: repeat(2, 1fr);
       column-gap: 48px;
-    }
-    .header {
-      h1 {
-        @include H1-t;
-      }
     }
   }
 }
 @media screen and (min-width: $desktop-small) {
   .container {
     max-width: none;
-    padding-bottom: 190px;
+    margin-left: 0;
+    padding-bottom: 90px;
   }
 }
 
 @media screen and (min-width: $desktop-medium) {
   .container {
-    padding-bottom: 137px;
+    padding-bottom: 104px;
     .managers {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -66,5 +51,11 @@
         @include H1-d;
       }
     }
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .container {
+    padding-bottom: 84px;
   }
 }

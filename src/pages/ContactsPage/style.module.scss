@@ -1,60 +1,90 @@
 @import "../../variables.scss";
 @import "../../mixins.scss";
 
+.subTitle {
+  color: $primary-active-btn;
+}
+.emailTitle {
+  color: $secondary-text;
+}
+
 .container {
   @include container;
   display: flex;
   flex-direction: column;
-  padding: 82px 16px 54px 16px;
-  gap: 40px;
+  padding: 82px 16px 50px 16px;
 
   .line {
     position: relative;
     right: 16px;
-    width: 140px;
+    width: 50px;
     border: 1px solid $primary-text;
+    margin-bottom: 40px;
   }
 
   .content {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 40px;
+    row-gap: 50px;
     grid-template-areas:
-      "info"
+      "mainInfo"
+      "officeImg"
+      "additionalInfo"
       "map"
-      "feed";
+      "feedback";
 
     .info {
-      grid-area: info;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .text {
+        p {
+          @include H2-m;
+          line-height: 220%;
+        }
+      }
+    }
+    .mainInfo {
+      grid-area: mainInfo;
 
       h2 {
         @include H2-m;
       }
 
-      .description {
-        margin-top: 32px;
-        p {
-          @include T1-M-m;
-        }
-        .general,
-        .warehouses {
-          margin-bottom: 2em;
-        }
+      .sectionTitle {
+        margin-bottom: 40px;
+      }
+      .addressMain {
+        max-width: 358px;
+        margin-bottom: 50px;
+      }
+    }
+    .officeImg {
+      grid-area: officeImg;
+      .img {
+        object-fit: cover;
+        object-position: center bottom;
+      }
+    }
 
-        .warehouses {
-          .bold {
-            @include T1-B-m;
-          }
-        }
+    .additionalInfo {
+      grid-area: additionalInfo;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
 
-        .phone {
-          margin-bottom: 1em;
+      .emailBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .email {
+          @include H2-m;
         }
       }
     }
 
     .feedback {
-      grid-area: feed;
+      grid-area: feedback;
       display: flex;
       flex-direction: column;
       gap: 32px;
@@ -124,14 +154,15 @@
 
     .map {
       grid-area: map;
-      text-align: right;
+    }
+
+    .officeImg,
+    .map {
       display: flex;
-      justify-content: end;
+      justify-content: center;
+      height: 400px;
       .img {
-        position: relative;
-        left: 16px;
-        width: 278px;
-        height: 267px;
+        width: 100%;
       }
     }
   }
@@ -139,43 +170,51 @@
 
 @media screen and (min-width: $tablet) {
   .container {
-    padding-top: 100px;
-    padding-left: 40px;
-
+    padding: 100px 40px 76px 40px;
+    
     .line {
       right: 40px;
     }
     .content {
       .info {
-        h2 {
-          @include H2-t;
-        }
-        .description {
+        .text {
           p {
-            @include T1-M-d;
+            @include H2-t;
           }
-          .warehouses {
-            .bold {
-              @include T1-B-d;
-            }
+        }
+      }
+      .mainInfo {
+        .sectionTitle {
+          @include H2-d;
+          margin-bottom: 80px;
+        }
+        .addressMain {
+          @include H2-t;
+          max-width: 480px;
+        }
+      }
+
+      .additionalInfo {
+        .emailBlock {
+          .email {
+            @include H2-t;
           }
         }
       }
       .feedback {
         form {
-          max-width: 400px;
-          .feedbackText {
-            textarea {
-              min-height: 140px;
+          flex-direction: row;
+          .contacts {
+            .formField {
+              min-width: 336px;
             }
           }
-        }
-      }
-      .map {
-        .img {
-          left: 16px;
-          width: 530px;
-          height: 510px;
+          .feedbackText {
+            flex: 1;
+            textarea {
+              min-height: auto;
+            }
+          }
         }
       }
     }
@@ -184,11 +223,35 @@
 
 @media screen and (min-width: $desktop-small) {
   .container {
+    padding-bottom: 70px;
+    .line {
+      width: 70px;
+    }
     .content {
-      row-gap: 80px;
+      grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
-      "info map"
-      "feed map";
+        "mainInfo officeImg"
+        "additionalInfo map"
+        "feedback feedback";
+      .officeImg,
+      .map {
+        justify-content: end;
+        .img {
+          position: relative;
+          left: 40px;
+          max-width: 500px;
+        }
+      }
+      .feedback {
+        form {
+          max-width: 750px;
+          .contacts {
+            .formField {
+              min-width: 366px;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -196,13 +259,31 @@
 @media screen and (min-width: $desktop-medium) {
   .container {
     .content {
-      row-gap: 80px;
-      grid-template-columns: auto auto;
-      grid-template-areas:
-      "info map"
-      "feed map";
-
+      .info {
+        .text {
+          p {
+            @include H2-d;
+          }
+        }
+      }
+      .mainInfo {
+        .addressMain {
+          @include H2-d;
+        }
+      }
+      .additionalInfo {
+        .emailBlock {
+          .email {
+            @include H2-d;
+          }
+        }
+      }
       .feedback {
+        .head {
+          h2 {
+            @include H2-d;
+          }
+        }
         form {
           flex-direction: row;
           .feedbackText {
@@ -212,10 +293,10 @@
           }
         }
       }
+      .officeImg,
       .map {
         .img {
-          width: 700px;
-          height: 486px;
+          max-width: 600px;
         }
       }
     }
@@ -225,14 +306,18 @@
 @media screen and (min-width: $desktop-large) {
   .container {
     padding-left: 70px;
+    padding-right: 70px;
     .line {
       right: 70px;
     }
     .content {
+    
+      .officeImg,
       .map {
         .img {
-          width: 1000px;
-          height: 486px;
+          max-width: 800px;
+          position: relative;
+          left: 0;
         }
       }
     }

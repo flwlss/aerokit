@@ -3,130 +3,125 @@
 
 .container {
   @include container;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 112px 16px 330px 40px;
+  gap: 50px;
+  padding: 32px 0 0 0;
 
   .content {
-    .line {
-      position: relative;
-      right: 40px;
-      width: 140px;
-      border: 1px solid $primary-text;
-    }
-
-    h1 {
-      @include H1-m;
-      max-width: 804px;
-      margin-top: 40px;
+    position: relative;
+    padding: 0 16px 56px 16px;
+    h2 {
+      @include H2-m;
       margin-bottom: 40px;
     }
 
     .productsList {
-      display: grid;
-      column-gap: 120px;
-      grid-template-columns: 1fr;
-      row-gap: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
 
-      .column1,
-      .column2 {
+      .item {
         display: flex;
-        flex-direction: column;
-        gap: 12px;
+        gap: 16px;
+
+        .itemMark {
+          margin-top: 11px;
+          border-top: 1px solid $primary-active-btn;
+          width: 30px;
+        }
       }
     }
   }
 
   .bgImg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 274px ;
-    z-index: -1;
+    height: 400px;
+    // z-index: -1;
 
     img {
-      display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      display: block;
+      object-fit: fill;
     }
   }
 }
 
 @media screen and (min-width: $tablet) {
   .container {
-    padding-top: 100px;
-    padding-bottom: 93px;
+    flex-direction: row;
+    padding-bottom: 0;
 
     .content {
-      h1 {
-        @include H1-t;
-      }
-      .productsList {
-        max-width: 430px;
+      padding-top: 173px;
+      padding-bottom: 28px;
+      h2 {
+        position: absolute;
+        top: 30px;
+        right: 100px;
+        width: max-content;
+        @include H2-t;
       }
     }
 
     .bgImg {
-      width: 500px;
-      height: 600px;
-      top: 50px;
-      left: auto;
-      right: 0;
+      max-width: 400px;
+      img {
+        height: 824px;
+        object-fit: cover;
+      }
     }
   }
 }
 
 @media screen and (min-width: $desktop-small) {
   .container {
-    padding-left: 70px;
     .content {
-      .line {
-        right: 70px;
-      }
-
-      h1 {
-        @include H1-d;
-      }
-
-      .productsList {
-        max-width: 678px;
+      padding-top: 173px;
+      h2 {
+        right: 140px;
+        @include H2-d;
       }
     }
     .bgImg {
-      width: 500px;
-      height: 600px;
-      top: 80px;
+      img {
+        height: 568px;
+      }
     }
   }
 }
 
 @media screen and (min-width: $desktop-medium) {
   .container {
-    padding-top: 200px;
     .content {
-      .productsList {
-        grid-template-columns: repeat(2, 420px);
-        column-gap: 120px;
-        row-gap: 12px;
+      padding-top: 249px;
+      h2 {
+        top: 100px;
+        right: 210px;
       }
     }
-
     .bgImg {
-      width: 720px;
-      height: 600px;
-      top: 148px;
+      min-width: 760px;
+      img {
+        height: 824px;
+      }
     }
   }
 }
 
 @media screen and (min-width: $desktop-large) {
   .container {
+    .content {
+      h2 {
+        right: 250px;
+      }
+    }
     .bgImg {
-      width: 1200px;
-      height: 600px;
+      min-width: 760px;
+      img {
+        height: 824px;
+      }
     }
   }
 }

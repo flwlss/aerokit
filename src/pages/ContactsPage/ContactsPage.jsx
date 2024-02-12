@@ -1,27 +1,60 @@
 import styles from "./style.module.scss";
 import Button from "../../components/Button/Button";
 import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
+import lotosOffice from "../../assets/lotos.jpg";
 
 export default function ContactsPage() {
   return (
     <section className={styles.container}>
       <div className={styles.line}></div>
       <div className={styles.content}>
-        <div className={styles.info}>
-          <h2>Контакты</h2>
-          <div className={styles.description}>
-            <div className={styles.warehouses}>
-              <p className={styles.bold}>Адреса складов:</p>
+        <div className={styles.mainInfo}>
+          <h2 className={styles.sectionTitle}>Контакты</h2>
+          <h2 className={styles.addressMain}>
+            Бизнес-центр Лотос, г. Москва, ул. Одесская, 2
+          </h2>
+          <div className={styles.info}>
+            <p className={styles.subTitle}>Отдель продаж</p>
+            <div className={styles.text}>
+              <p>+7 (916) 450-04-89</p>
+              <p>sales@aerokit.aero</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.additionalInfo}>
+          <div className={styles.info}>
+            <p className={styles.subTitle}>Адреса складов:</p>
+            <div className={styles.text}>
               <p>г. Серпухов, ул. Полевая 1</p>
               <p>г. Жуков, ул. Сельхозтехника, 17</p>
             </div>
-            <p className={styles.phone}>+7 495 740 01 07</p>
-            <p>info@aerokit.aero</p>
           </div>
+          <div className={styles.emailBlock}>
+            <p className={styles.emailTitle}>Почта</p>
+            <p className={styles.email}>logistics@aerokit.aero</p>
+          </div>
+        </div>
+        <div className={styles.officeImg}>
+          <img src={lotosOffice} alt="office" className={styles.img} />
+        </div>
+        <div className={styles.map}>
+          <YMaps query={{ lang: "ru_RU" }}>
+            <Map
+              className={styles.img}
+              defaultState={{
+                center: [55.431184, 37.544905],
+                zoom: 7,
+              }}
+            >
+              <Placemark geometry={[54.909561, 37.444898]} />
+              <Placemark geometry={[55.015542, 36.77621]} />
+            </Map>
+          </YMaps>
         </div>
         <div className={styles.feedback}>
           <div className={styles.head}>
-            <h2>Обратная связть</h2>
+            <div className={styles.line}></div>
+            <h2>Обратная связь</h2>
             <p>
               Будем рады, если вы поделитесь впечатлениями об оказанной услуге.
               Оставьте свое сообщение, и мы обязательно ответим.
@@ -52,20 +85,6 @@ export default function ContactsPage() {
             </div>
           </form>
           <Button onClick={() => {}}>Отправить</Button>
-        </div>
-        <div className={styles.map}>
-          <YMaps query={{ lang: 'ru_RU' }}>
-            <Map
-              className={styles.img}
-              defaultState={{
-                center: [55.431184, 37.544905],
-                zoom: 7,
-              }}
-            >
-              <Placemark geometry={[54.909561, 37.444898]} />
-              <Placemark geometry={[55.015542, 36.776210]} />
-            </Map>
-          </YMaps>
         </div>
       </div>
     </section>

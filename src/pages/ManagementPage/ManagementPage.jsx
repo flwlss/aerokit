@@ -39,10 +39,6 @@ const managers = [
 export default function ManagementPage() {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <span>О нас</span>
-        <h1>Руководство</h1>
-      </header>
       <div className={styles.managers}>
         {
           managers.map((manager, i) => <ManagerCard key={i} name={manager.name} post={manager.post} bgUrl={manager.bgUrl} />)

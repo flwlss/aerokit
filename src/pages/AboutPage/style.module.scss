@@ -3,10 +3,13 @@
 
 .container {
   @include container;
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 52px 16px 0 16px;
-  gap: 112px;
+  padding: 0 16px;
+  margin-top: 52px;
+  gap: 80px;
 
   .subNav {
     display: flex;
@@ -64,37 +67,27 @@
 
   .bgImg {
     position: absolute;
-    top: 192px;
-    width: 253px;
-    height: 600px;
+    top: 0;
+    width: 400px;
+    height: 800px;
     object-fit: cover;
+    object-position: center bottom;
     right: 0;
-    bottom: 48px;
     z-index: -1;
   }
 }
-
 @media screen and (min-width: $tablet) {
   .container {
-    padding: 100px 40px 0 40px;
-    .bgImg {
-      width: 360px;
-      bottom: 123px;
-    }
+    margin-top: 100px;
   }
 }
-
 @media screen and (min-width: $desktop-small) {
   .container {
     flex-direction: row;
-    gap: 157px;
+    gap: 87px;
 
     .content {
-      padding-top: 32px;
-    }
-    .bgImg {
-      width: 400px;
-      bottom: 38px;
+      padding-top: 140px;
     }
   }
 }
@@ -102,26 +95,22 @@
 @media screen and (min-width: $desktop-medium) {
   .container {
     flex-direction: row;
-    gap: 157px;
-    padding-top: 170px;
 
     .bgImg {
       width: 760px;
-      height: 800;
-      bottom: 94px;
+      height: 824px;
     }
   }
 }
 
 @media screen and (min-width: $desktop-large) {
   .container {
-    gap: 197px;
-    padding: 170px 70px 0 70px;
+    gap: 57px;
+    padding: 0 70px 0 70px;
 
     .bgImg {
-      width: 1170px;
-      height: 800;
-      bottom: 150px;
+      width: 1000px;
+      height: 880px;
     }
   }
 }

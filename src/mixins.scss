@@ -92,3 +92,9 @@
   font-family: 'Montserrat-SemiBold';
   font-size: 26px;
 }
+
+@mixin inheritFont {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

@@ -1,85 +1,99 @@
 @import "../../mixins.scss";
 @import "../../variables.scss";
 
-.container {
+.focusText {
+  color: $primary-active-btn;
+  @include inheritFont;
+}
+.loaders {
   display: flex;
-  flex-direction: column;
-  gap: 80px;
-  padding-bottom: 90px;
+  justify-content: center;
+  gap: 8px;
+}
 
-  .header {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-
-    h1 {
-      @include H1-m;
+.timeLineTrack {
+  left: 4px;
+  position: relative;
+  height: 600px;
+  margin-bottom: 8px;
+  width: 2px;
+  background-color: white;
+  .timeLineDot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    left: calc(50% - 4px);
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    &:hover {
+    background-color: $primary-active-btn;
     }
-    span {
-      @include T1-M-d;
+    &:first-child {
+      top:0;
+      background-color: $primary-active-btn;
+    }
+    &:nth-child(2) {
+      top:50%;
+    }
+    &:nth-child(3) {
+      bottom: -8px;
     }
   }
+  .timeLine {
+    height: 0px;
+    background-color: $primary-active-btn;
+    animation-name: timeLine;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+}
 
-  .service {
-    * {
-      @include T1-M-d;
-    }
-
+.container {
+  // overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  
+  .infoBlock {
     display: flex;
     flex-direction: column;
     gap: 80px;
+  }
 
-    .intro {
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .description {
       @include H2-m;
-
-      .focusText {
-        @include H2-m;
-        color: $primary-active-btn;
+      p {
+        @include inheritFont;
       }
+      font-weight: bold;
     }
+  }
 
-    .serviceList {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 56px;
-
-      .group {
-        display: flex;
-        gap: 24px;
-
-        h3 {
-          font-weight: 500;
-        }
-        .groupItem {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-
-
-          
-          .groupItemList {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-          }
-        }
-      }
-
-      .serviceItem {
-      }
-    }
+  .img {
+    position: relative;
+    left: -16px;
+    width: 100vw;
+    height: 300px;
+    object-fit: cover;
   }
 }
 
 @media screen and (min-width: $tablet) {
   .container {
-    max-width: 500px;
+    flex-direction: row;
     margin: 0 auto;
-
-    .header {
-      h1 {
-        @include H1-t;
+    .info {
+      gap: 50px;
+      .description {
+        @include H2-d;
+        max-width: 484px;
       }
     }
   }
@@ -87,14 +101,42 @@
 
 @media screen and (min-width: $desktop-medium) {
   .container {
-    max-width: 804px;
-    .serviceList {
-      max-width: 700px;
-    }
-    .header {
-      h1 {
-        @include H1-d;
+    .info {
+      .description {
+        max-width: 900px;
       }
     }
   }
 }
+
+.info {
+  animation-name: switch;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes switch {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes timeLine {
+  0% {
+    height: 0;
+  }
+  33% {
+    height: 50%;
+  }
+  66% {
+    height: 100%
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+
