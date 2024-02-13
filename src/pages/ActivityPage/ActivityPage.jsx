@@ -28,9 +28,9 @@ export default function ActivityPage() {
   const thirdDotRef = useRef(null);
 
   useEffect(() => {
-    if (currentTab.name === 'aboutUs') {
-      secondDotRef.current.style.backgroundColor = "white"
-      thirdDotRef.current.style.backgroundColor = "white"
+    if (currentTab.name === "aboutUs") {
+      secondDotRef.current.style.backgroundColor = "white";
+      thirdDotRef.current.style.backgroundColor = "white";
     }
     if (!isSwiperStopped) {
       swiperInterval.current = setTimeout(() => {
@@ -48,7 +48,7 @@ export default function ActivityPage() {
           secondDotRef.current.style.backgroundColor = "white";
           thirdDotRef.current.style.backgroundColor = "white";
           break;
-        case "service": 
+        case "service":
           secondDotRef.current.style.backgroundColor = "#49C5B1";
           thirdDotRef.current.style.backgroundColor = "white";
           break;
@@ -57,7 +57,7 @@ export default function ActivityPage() {
           break;
       }
     }
-  }, [currentTab])
+  }, [currentTab]);
 
   return (
     <div className={styles.container}>
@@ -180,8 +180,8 @@ export default function ActivityPage() {
               clearInterval(swiperInterval.current);
               timeLineRef.current.style.animation = "none";
               timeLineRef.current.style.height = "0px";
-              secondDotRef.current.style.animation = "none"
-              thirdDotRef.current.style.animation = "none"
+              secondDotRef.current.style.animation = "none";
+              thirdDotRef.current.style.animation = "none";
             }}
           ></div>
           <div
@@ -226,9 +226,10 @@ export default function ActivityPage() {
               </p>
               <br />
               <p>
-                На данный момент AeroKit занимает{" "}
-                <span className={styles.focusText}>лидирующие позиции</span> в
-                сфере ТОиР компонентов ВС.
+                Мы не останавливаемся
+                на достигнутом и всегда стремимся к большему – ежемесячно
+                пополняем перечень ремонтируемых компонентов новыми позициями,
+                расширяя возможности предоставляемых услуг.
               </p>
             </div>
           </div>
