@@ -5,7 +5,7 @@
   color: $primary-active-btn;
 }
 .emailTitle {
-  color: $secondary-text;
+  color: $primary-active-btn;
 }
 
 .container {
@@ -55,6 +55,13 @@
         margin-bottom: 40px;
       }
       .addressMain {
+        span, p {
+          @include inheritFont;
+        }
+        span {
+          display: block;
+          margin-top: 1em;
+        }
         max-width: 358px;
         margin-bottom: 50px;
       }
@@ -180,6 +187,7 @@
         .text {
           p {
             @include H2-t;
+            line-height: 220%;
           }
         }
       }
@@ -263,6 +271,7 @@
         .text {
           p {
             @include H2-d;
+            line-height: 220%;
           }
         }
       }

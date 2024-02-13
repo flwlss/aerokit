@@ -11,10 +11,11 @@ export default function ContactsPage() {
         <div className={styles.mainInfo}>
           <h2 className={styles.sectionTitle}>Контакты</h2>
           <h2 className={styles.addressMain}>
-            Бизнес-центр Лотос, г. Москва, ул. Одесская, 2
+            <p>Бизнес-центр Лотос, г. Москва, ул. Одесская, 2</p>
+            <span>info@aerokit.aero</span>
           </h2>
           <div className={styles.info}>
-            <p className={styles.subTitle}>Отдель продаж</p>
+            <p className={styles.subTitle}>Отдел продаж</p>
             <div className={styles.text}>
               <p>+7 (916) 450-04-89</p>
               <p>sales@aerokit.aero</p>
