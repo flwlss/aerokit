@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import bgImg from "../../assets/productionBg.png";
+import bgImg from "../../assets/productionBg.jpg";
 
 const products = [
   "раскладные кресельные столики и замки",

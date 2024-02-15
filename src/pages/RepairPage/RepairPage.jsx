@@ -1,6 +1,6 @@
 import styles from "./style.module.scss";
-import electronicBg from "../../assets/electronicBg.png";
-import bgImg from "../../assets/repairBg.png";
+import electronicBg from "../../assets/electronicBg.jpg";
+import bgImg from "../../assets/repairBg.jpg";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
 
