@@ -53,6 +53,7 @@ export default function ActivityPage() {
           thirdDotRef.current.style.backgroundColor = "white";
           break;
         case "warranty":
+          secondDotRef.current.style.backgroundColor = "#49C5B1";
           thirdDotRef.current.style.backgroundColor = "#49C5B1";
           break;
       }
@@ -222,21 +223,30 @@ export default function ActivityPage() {
                 является частью{" "}
                 <span className={styles.focusText}>UTG GROUP</span> - первого
                 независимого российского оператора наземного обслуживания
-                полного цикла.
+                полного цикла. полного цикла.
               </p>
               <br />
               <p>
-                Мы не останавливаемся
-                на достигнутом и всегда стремимся к большему – ежемесячно
-                пополняем перечень ремонтируемых компонентов новыми позициями,
-                расширяя возможности предоставляемых услуг.
+                На данный момент AeroKit занимает{" "}
+                <span className={styles.focusText}>лидирующие позиции</span> в
+                сфере ТОиР компонентов ВС. AeroKit поддерживает высокий уровень
+                качества предоставляемых услуг, выпускаемой продукции и{" "}
+                <span className={styles.focusText}>
+                  сертифицирована по стандартам
+                </span>{" "}
+                ISO 9001 и ФАП-285. Мы обслуживаем все типы воздушных судов,
+                эксплуатируемых в РФ –{" "}
+                <span className={styles.focusText}>
+                  Boeing, Airbus, Bombardier, Embraer, ATR, SSJ.
+                </span>
               </p>
             </div>
           </div>
         )}
+        {/* Title is Гарантии качества after renaming*/}
         {currentTab === "service" && (
           <div className={`${styles.info} ${styles.service}`}>
-            <span className={styles.title}>Услуги</span>
+            <span className={styles.title}>Гарантии качества</span>
             <div className={styles.description}>
               <p>
                 Профессиональная команда AeroKit - это тщательно отобранные и
@@ -244,47 +254,37 @@ export default function ActivityPage() {
               </p>
               <br />
               <p>
-                Мы обслуживаем все типы воздушных судов, эксплуатируемых в РФ –{" "}
+                Клиенты доверяют нам ремонт авиационных компонентов, и мы{" "}
                 <span className={styles.focusText}>
-                  Boeing, Airbus, Bombardier, Embraer, ATR, SSJ
+                  своевременно исполняем наши обязательства.
                 </span>{" "}
-                и не останавливаемся на достигнутом – ежемесячно пополняем
-                перечень ремонтируемых компонентов новыми позициями, расширяя
-                возможности предоставляемых услуг.
-              </p>
-              <br />
-            </div>
-          </div>
-        )}
-        {currentTab === "warranty" && (
-          <div className={`${styles.info} ${styles.warranty}`}>
-            <span className={styles.title}>Гарантии качества</span>
-            <div className={styles.description}>
-              <p>
-                AeroKit поддерживает высокий уровень качества предоставляемых
-                услуг, выпускаемой продукции и{" "}
-                <span className={styles.focusText}>
-                  сертифицирована по стандартам
-                </span>{" "}
-                ISO 9001 и ФАП-285.
               </p>
               <br />
               <p>
-                Клиенты доверяют нам ремонт авиационных компонентов, и мы&nbsp;
+                Гарантия исполнения сроков и контроль качества на всех этапах,
+                обеспечивают{" "}
+                <span className={styles.focusText}>стабильность</span>{" "}
+                расписания наших клиентов и поддерживают{" "}
                 <span className={styles.focusText}>
-                  своевременно исполняем наши обязательства
+                  безопасность полетов на высоком уровне
                 </span>
                 .
               </p>
-              <br />
+            </div>
+          </div>
+        )}
+        {/* Title is Развитие after renaming*/}
+        {currentTab === "warranty" && (
+          <div className={`${styles.info} ${styles.warranty}`}>
+            <span className={styles.title}>Развитие</span>
+            <div className={styles.description}>
               <p>
-                Гарантия исполнения сроков и контроль качества на всех этапах
-                обеспечивают стабильность расписания наших клиентов и
-                поддерживают безопасность полетов на высоком уровне.
+                Мы не останавливаемся на достигнутом и{" "}
+                <span className={styles.focusText}>всегда стремимся</span> к
+                большему – ежемесячно пополняем перечень ремонтируемых
+                компонентов новыми позициями, расширяя возможности
+                предоставляемых услуг.
               </p>
-              <span className={styles.focusText}>
-                лидирующие позиции в сфере ТОиР компонентов ВС
-              </span>
             </div>
           </div>
         )}
