@@ -3,6 +3,8 @@ import electronicBg from "../../assets/electronicBg.jpg";
 import bgImg from "../../assets/repairBg.jpg";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
+import SlideButtons from "../../components/SlideButtons/SlideButtons";
+import Electromechanics from "../../slides/Electromechanics/Electromechanics";
 
 const mainRepairs = [
   "Boeing - B737 (CL & NG), B757, B767, B777, B747",
@@ -41,20 +43,24 @@ const swiperData = {
 };
 
 export default function RepairPage() {
-  const { width } = useWindowSize();
-  const [currentTab, setCurrentTab] = useState(() => swiperData.electronic.name);
+  // const { width } = useWindowSize();
+  const [currentTab, setCurrentTab] = useState(
+    () => swiperData.electronic.name
+  );
 
-  useEffect(() => {
-    const timerInterval = setTimeout(() => {
-      const next = swiperData[currentTab].next;
-      setCurrentTab(next);
-    }, 10000);
-    return () => clearTimeout(timerInterval);
-  }, [currentTab]);
+  // useEffect(() => {
+  //   const timerInterval = setTimeout(() => {
+  //     const next = swiperData[currentTab].next;
+  //     setCurrentTab(next);
+  //   }, 10000);
+  //   return () => clearTimeout(timerInterval);
+  // }, [currentTab]);
 
   return (
     <div className={styles.container}>
-      {width < 768 && (
+      <SlideButtons currentTab={currentTab} setCurrentTab={setCurrentTab} />
+      {currentTab === "electronic" && <Electromechanics />}
+      {/* {width < 768 && (
         <>
           {currentTab === "electronic" && (
             <div className={`${styles.electronic} ${styles.animated}`}>
@@ -292,7 +298,7 @@ export default function RepairPage() {
             </div>
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
 }

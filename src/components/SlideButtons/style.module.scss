@@ -1,0 +1,28 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.slideButtons {
+  .button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .activeText {
+    font-weight: 500;
+    font-size: 16px;
+    color: $primary-active-btn;
+    line-height: 22px;
+    margin-right: 24px;
+  }
+
+  .inactiveText {
+    @extend .activeText;
+    color: #fff;
+  }
+}
