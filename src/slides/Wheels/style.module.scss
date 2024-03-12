@@ -1,0 +1,144 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.container {
+  margin-top: 50px;
+
+  .arrows {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  .activeArrow {
+    cursor: pointer;
+
+    path {
+      fill: #fff;
+    }
+
+    &:last-child {
+      margin-left: 24px;
+    }
+  }
+
+  .inactiveArrow {
+    cursor: pointer;
+
+    path {
+      fill: #aeaeae;
+    }
+
+    &:last-child {
+      margin-left: 24px;
+    }
+  }
+
+  .videoWrapper {
+    @include productionVideo;
+    width: 100%;
+    height: 250px;
+  }
+
+  .content {
+    margin-top: 50px;
+
+    h2 {
+      @include H2-m;
+      margin-bottom: 40px;
+
+      span {
+        @include inheritFont;
+        color: $primary-active-btn;
+      }
+    }
+
+    .productsList {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 50px;
+
+      .item {
+        display: flex;
+        gap: 16px;
+
+        .itemMark {
+          margin-top: 11px;
+          border-top: 1px solid $primary-active-btn;
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    margin-top: 25px;
+
+    .content {
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .videoWrapper {
+      height: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-small) {
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .playerWrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      width: 400px;
+      margin-right: 44px;
+    }
+
+    .videoWrapper {
+      @include productionVideo;
+      width: 500px;
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-medium) {
+  .container {
+    justify-content: right;
+
+    .content {
+      margin-top: 75px;
+      width: 600px;
+      margin-right: -300px;
+      z-index: 2;
+
+      h2 {
+        font-size: 30px;
+      }
+    }
+
+    .videoWrapper {
+      @include productionVideo;
+      width: 800px;
+      height: 600px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .container {
+    .content {
+      margin-right: 90px;
+    }
+  }
+}
