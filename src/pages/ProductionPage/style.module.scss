@@ -12,6 +12,15 @@
   .content {
     position: relative;
     padding: 0 16px 56px 16px;
+    h1 {
+      color: $primary-active-btn;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 36px;
+      position: absolute;
+      top: -470px;
+      // top: 0;
+    }
     h2 {
       @include H2-m;
       margin-bottom: 40px;
@@ -39,37 +48,45 @@
     height: 400px;
     // z-index: -1;
 
-    img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: fill;
+    .videoWrapper {
+      @include productionVideo;
+      width: 100vw;
+      height: 400px;
     }
   }
 }
 
 @media screen and (min-width: $tablet) {
   .container {
-    flex-direction: row;
+    // flex-direction: row;
     padding-bottom: 0;
 
     .content {
       padding-top: 173px;
       padding-bottom: 28px;
+      h1 {
+        color: $primary-active-btn;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 48px;
+        position: absolute;
+        top: -479px;
+      }
       h2 {
         position: absolute;
-        top: 30px;
-        right: 100px;
+        top: 0;
         width: max-content;
         @include H2-t;
       }
     }
 
     .bgImg {
-      max-width: 400px;
-      img {
-        height: 824px;
-        object-fit: cover;
+      max-width: 100vw;
+
+      .videoWrapper {
+        @include productionVideo;
+        width: 100vw;
+        height: 500px;
       }
     }
   }
@@ -77,16 +94,32 @@
 
 @media screen and (min-width: $desktop-small) {
   .container {
+    flex-direction: row;
     .content {
       padding-top: 173px;
+      h1 {
+        color: $primary-active-btn;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 48px;
+        position: absolute;
+        top: -24px;
+        left: -270px;
+      }
       h2 {
         right: 140px;
+        top: 30px;
         @include H2-d;
       }
     }
     .bgImg {
-      img {
-        height: 568px;
+      // min-width: 30px;
+      // height: 100%;
+
+      .videoWrapper {
+        @include productionVideo;
+        width: 420px;
+        height: 600px;
       }
     }
   }
@@ -96,6 +129,15 @@
   .container {
     .content {
       padding-top: 249px;
+      h1 {
+        color: $primary-active-btn;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 58px;
+        position: absolute;
+        top: -29px;
+        left: -340px;
+      }
       h2 {
         top: 100px;
         right: 210px;
@@ -103,8 +145,12 @@
     }
     .bgImg {
       min-width: 760px;
-      img {
-        height: 824px;
+      height: 100%;
+
+      .videoWrapper {
+        @include productionVideo;
+        width: 760px;
+        height: 800px;
       }
     }
   }
@@ -113,14 +159,27 @@
 @media screen and (min-width: $desktop-large) {
   .container {
     .content {
+      h1 {
+        color: $primary-active-btn;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 58px;
+        position: absolute;
+        top: -29px;
+        left: -380px;
+      }
       h2 {
         right: 250px;
       }
     }
     .bgImg {
-      min-width: 760px;
-      img {
-        height: 824px;
+      min-width: 1000px;
+      height: 100%;
+
+      .videoWrapper {
+        @include productionVideo;
+        width: 1000px;
+        height: 800px;
       }
     }
   }

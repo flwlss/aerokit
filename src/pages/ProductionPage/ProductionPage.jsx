@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import bgImg from "../../assets/productionBg.jpg";
+import { useEffect, useRef } from "react";
 
 const products = [
   "раскладные кресельные столики и замки",
@@ -15,12 +15,25 @@ const products = [
 ];
 
 export default function ProductionPage() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.bgImg}>
-        <img src={bgImg} alt="bg" />
+        <div className={styles.videoWrapper}>
+          <video loop muted ref={videoRef} width="0" height="0">
+            <source src="../../src/assets/video.mov" type="video/mp4" />
+          </video>
+        </div>
       </div>
       <div className={styles.content}>
+        <h1>Интерьерный цех</h1>
         <h2>
           AeroKit оказывает полный цикл услуг
           <br />

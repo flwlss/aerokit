@@ -9,87 +9,85 @@
 
 //desktop heading
 @mixin H1-d {
-  font-family: 'Montserrat-SemiBold';
+  font-family: "Montserrat-SemiBold";
   font-size: 48px;
 }
 @mixin H2-d {
-  font-family: 'Montserrat-SemiBold';
+  font-family: "Montserrat-SemiBold";
   font-size: 30px;
   line-height: 110%;
 }
 
 //tablet heading
 @mixin H1-t {
-  font-family: 'Montserrat-SemiBold';
+  font-family: "Montserrat-SemiBold";
   font-size: 40px;
 }
 @mixin H2-t {
-  font-family: 'Montserrat-SemiBold';
+  font-family: "Montserrat-SemiBold";
   font-size: 28px;
   line-height: 110%;
 }
 
 //mobile heading
 @mixin H1-m {
-  font-family: 'Montserrat-SemiBold';
+  font-family: "Montserrat-SemiBold";
   font-size: 30px;
 }
 @mixin H2-m {
-  font-family: 'Montserrat-SemiBold';
+  font-family: "Montserrat-SemiBold";
   font-size: 24px;
   line-height: 110%;
 }
 
-
 //desktop text
 @mixin T1-M-d {
-  font-family: 'Montserrat-Medium';
+  font-family: "Montserrat-Medium";
   font-size: 16px;
   line-height: 140%;
 }
 @mixin T1-B-d {
-  font-family: 'Montserrat-Bold';
+  font-family: "Montserrat-Bold";
   font-size: 16px;
   line-height: 140%;
 }
 @mixin T2-d {
-  font-family: 'Montserrat-Light';
+  font-family: "Montserrat-Light";
   font-size: 15px;
 }
 
 @mixin T3-d {
-  font-family: 'Montserrat-Medium';
+  font-family: "Montserrat-Medium";
   font-size: 14px;
 }
 
 //mobile text
 @mixin T1-M-m {
-  font-family: 'Montserrat-Medium';
+  font-family: "Montserrat-Medium";
   font-size: 14px;
   line-height: 140%;
 }
 @mixin T1-B-m {
-  font-family: 'Montserrat-Bold';
+  font-family: "Montserrat-Bold";
   font-size: 14px;
   line-height: 140%;
 }
 
-
 @mixin Button-d {
-  font-family: 'Montserrat-SemiBold';
+  font-family: "Montserrat-SemiBold";
   font-size: 20px;
 }
 @mixin L-M-d {
-  font-family: 'Montserrat-Medium';
+  font-family: "Montserrat-Medium";
   font-size: 14px;
 }
 @mixin L-B-d {
-  font-family: 'Montserrat-Bold';
+  font-family: "Montserrat-Bold";
   font-size: 14px;
 }
 
 @mixin Button-m {
-  font-family: 'Montserrat-SemiBold';
+  font-family: "Montserrat-SemiBold";
   font-size: 26px;
 }
 
@@ -97,4 +95,28 @@
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+@mixin productionVideo {
+  // width: 1000px;
+  // height: 800px;
+  background-color: #000;
+  opacity: 0.5;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
 }
