@@ -60,7 +60,6 @@ export default function Electromechanics() {
                 ? styles.activeArrow
                 : styles.inactiveArrow
             }
-            src="/src/assets/svg/slideArrow.svg"
           />
           <Arrow
             style={{ transform: "rotate(180deg)" }}
@@ -70,7 +69,6 @@ export default function Electromechanics() {
                 ? styles.activeArrow
                 : styles.inactiveArrow
             }
-            src="/src/assets/svg/slideArrow.svg"
           />
         </div>
         <div className={styles.videoWrapper}>

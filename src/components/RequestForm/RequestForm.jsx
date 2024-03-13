@@ -1,6 +1,8 @@
 import RequestButton from "../RequestButton/RequestButton";
 import styles from "./style.module.scss";
 import { useState, useRef } from "react";
+import Cross from "/src/assets/svg/cross.svg?react";
+import File from "/src/assets/svg/file.svg?react";
 
 export default function RequestForm() {
   const fileInputRef = useRef(null);
@@ -66,7 +68,7 @@ export default function RequestForm() {
       <div className={styles.formField}>
         <label htmlFor="files">Прикрепить фото</label>
         <label className={styles.fileInput} htmlFor="files">
-          <img src="/src/assets/svg/file.svg" alt="" />
+          <File />
           <p>Прикрепить</p>
         </label>
         <input
@@ -81,10 +83,9 @@ export default function RequestForm() {
         {documents.map((file, index) => (
           <div key={index}>
             <p key={index}>{file.name}</p>
-            <img
+            <Cross
+              className={styles.cross}
               onClick={() => handleRemoveFile(index)}
-              src="/src/assets/svg/cross.svg"
-              alt=""
             />
           </div>
         ))}

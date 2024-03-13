@@ -14,11 +14,11 @@ export default function Wheels() {
   ];
 
   const videos = [
-    "/videos/wheels/video1.MOV",
-    "/videos/wheels/video2.MOV",
-    "/videos/wheels/video3.MOV",
-    "/videos/wheels/video4.MOV",
-    "/videos/wheels/video5.MOV",
+    "/videos/wheels/video1.mp4",
+    "/videos/wheels/video2.mp4",
+    "/videos/wheels/video3.mp4",
+    "/videos/wheels/video4.mp4",
+    "/videos/wheels/video5.mp4",
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -52,7 +52,6 @@ export default function Wheels() {
                 ? styles.activeArrow
                 : styles.inactiveArrow
             }
-            src="/src/assets/svg/slideArrow.svg"
           />
           <Arrow
             style={{ transform: "rotate(180deg)" }}
@@ -62,7 +61,6 @@ export default function Wheels() {
                 ? styles.activeArrow
                 : styles.inactiveArrow
             }
-            src="/src/assets/svg/slideArrow.svg"
           />
         </div>
         <div className={styles.videoWrapper}>

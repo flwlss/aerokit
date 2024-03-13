@@ -1,4 +1,5 @@
 import styles from "./style.module.scss";
+import CircleArrow from "/src/assets/svg/circleArrow.svg?react";
 
 export default function SlideButtons({ currentTab, setCurrentTab }) {
   return (
@@ -20,9 +21,7 @@ export default function SlideButtons({ currentTab, setCurrentTab }) {
           <br />
           участок
         </p>
-        {currentTab === "electronic" && (
-          <img src="/src/assets/svg/circleArrow.svg" alt="" />
-        )}
+        {currentTab === "electronic" && <CircleArrow />}
       </div>
       <div
         onClick={() => {
@@ -38,9 +37,7 @@ export default function SlideButtons({ currentTab, setCurrentTab }) {
           Участок по ремонту <br />
           колес и тормозов
         </p>
-        {currentTab === "main" && (
-          <img src="/src/assets/svg/circleArrow.svg" alt="" />
-        )}
+        {currentTab === "main" && <CircleArrow />}
       </div>
     </div>
   );
