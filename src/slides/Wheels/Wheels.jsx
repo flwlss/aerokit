@@ -14,11 +14,11 @@ export default function Wheels() {
   ];
 
   const videos = [
-    "/src/assets/videos/wheels/video1.mov",
-    "/src/assets/videos/wheels/video2.mov",
-    "/src/assets/videos/wheels/video3.mov",
-    "/src/assets/videos/wheels/video4.mov",
-    "/src/assets/videos/wheels/video5.mov",
+    "/videos/wheels/video1.MOV",
+    "/videos/wheels/video2.MOV",
+    "/videos/wheels/video3.MOV",
+    "/videos/wheels/video4.MOV",
+    "/videos/wheels/video5.MOV",
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);

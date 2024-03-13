@@ -23,10 +23,10 @@ export default function Electromechanics() {
   ];
 
   const videos = [
-    "/src/assets/videos/electromechanics/video1.mp4",
-    "/src/assets/videos/electromechanics/video2.mp4",
-    "/src/assets/videos/electromechanics/video3.mp4",
-    "/src/assets/videos/electromechanics/video4.mp4",
+    "/videos/electromechanics/video1.mp4",
+    "/videos/electromechanics/video2.mp4",
+    "/videos/electromechanics/video3.mp4",
+    "/videos/electromechanics/video4.mp4",
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
