@@ -64,6 +64,30 @@
     }
   }
 
+  .fileWrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 12px;
+        height: 12px;
+        margin-left: 8px;
+        cursor: pointer;
+      }
+
+      p {
+        font-size: 12px;
+        color: #26282e;
+        font-weight: 600;
+      }
+    }
+  }
+
   .cells {
     display: grid;
     gap: 24px;
@@ -71,7 +95,7 @@
   }
 
   .submitBtnContainer {
-    margin-top: 50px;
+    margin-top: 30px;
   }
 }
 

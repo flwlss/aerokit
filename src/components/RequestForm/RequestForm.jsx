@@ -1,7 +1,24 @@
 import RequestButton from "../RequestButton/RequestButton";
 import styles from "./style.module.scss";
+import { useState, useRef } from "react";
 
 export default function RequestForm() {
+  const fileInputRef = useRef(null);
+
+  const [documents, setDocuments] = useState([]);
+
+  const handleFileChange = (event) => {
+    const files = event.target.files;
+    setDocuments([...documents, ...files]);
+    fileInputRef.current.value = "";
+  };
+
+  const handleRemoveFile = (index) => {
+    const updatedDocuments = [...documents];
+    updatedDocuments.splice(index, 1);
+    setDocuments(updatedDocuments);
+  };
+
   return (
     <form className={styles.form}>
       <div className={styles.formField}>
@@ -52,7 +69,25 @@ export default function RequestForm() {
           <img src="/src/assets/svg/file.svg" alt="" />
           <p>Прикрепить</p>
         </label>
-        <input style={{ display: "none" }} id="files" type="file" />
+        <input
+          ref={fileInputRef}
+          style={{ display: "none" }}
+          onChange={handleFileChange}
+          id="files"
+          type="file"
+        />
+      </div>
+      <div className={styles.fileWrapper}>
+        {documents.map((file, index) => (
+          <div key={index}>
+            <p key={index}>{file.name}</p>
+            <img
+              onClick={() => handleRemoveFile(index)}
+              src="/src/assets/svg/cross.svg"
+              alt=""
+            />
+          </div>
+        ))}
       </div>
       <div className={styles.submitBtnContainer}>
         <RequestButton onClick={() => {}}>Отправить</RequestButton>
