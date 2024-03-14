@@ -25,38 +25,39 @@ export default function ProductionPage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.bgImg}>
-        <div className={styles.videoWrapper}>
-          <video
-            controls={false}
-            playsInline
-            loop
-            muted
-            ref={videoRef}
-            width="0"
-            height="0"
-          >
-            <source src="/videos/prod/video.mp4" type="video/mp4" />
-          </video>
+      <div className={styles.line} />
+      <h1 className={styles.mobileTitle}>Интерьерный цех</h1>
+      <div className={styles.contentWrapper}>
+        <div className={styles.playerWrapper}>
+          <div className={styles.videoWrapper}>
+            <video
+              controls={false}
+              playsInline
+              loop
+              muted
+              ref={videoRef}
+              width="0"
+              height="0"
+            >
+              <source src="/videos/prod/video.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
-      </div>
-      <div className={styles.content}>
-        <h1>Интерьерный цех</h1>
-        <h2>
-          AeroKit оказывает полный цикл услуг
-          <br />
-          по производству и ремонту авиационных
-          <br />
-          интерьерных компонентов таких как:
-        </h2>
-        <ul className={styles.productsList}>
-          {products.map((product, i) => (
-            <li className={styles.item} key={i}>
-              <div className={styles.itemMark}></div>
-              <p>{product}</p>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.content}>
+          <h1 className={styles.descTitle}>Интерьерный цех</h1>
+          <p className={styles.text}>
+            AeroKit оказывает полный цикл услуг по производству и ремонту
+            авиационных интерьерных компонентов таких как:
+          </p>
+          <ul className={styles.productsList}>
+            {products.map((product, i) => (
+              <li className={styles.item} key={i}>
+                <div className={styles.itemMark}></div>
+                <p>{product}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

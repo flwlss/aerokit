@@ -2,185 +2,167 @@
 @import "../../mixins.scss";
 
 .container {
-  @include container;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding: 32px 0 0 0;
+  margin-top: 80px;
+  padding-bottom: 60px;
 
-  .content {
-    position: relative;
-    padding: 0 16px 56px 16px;
-    h1 {
-      color: $primary-active-btn;
-      font-weight: 600;
-      font-size: 30px;
-      line-height: 36px;
-      position: absolute;
-      top: -470px;
-      // top: 0;
-    }
-    h2 {
-      @include H2-m;
-      margin-bottom: 40px;
-    }
-
-    .productsList {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-
-      .item {
-        display: flex;
-        gap: 16px;
-
-        .itemMark {
-          margin-top: 11px;
-          border-top: 1px solid $primary-active-btn;
-          width: 30px;
-        }
-      }
-    }
+  .line {
+    width: 70px;
+    height: 1px;
+    background-color: #ffffff;
   }
 
-  .bgImg {
-    height: 400px;
-    // z-index: -1;
+  .mobileTitle {
+    color: $primary-active-btn;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;
+    margin-top: 40px;
+    padding: 0 16px;
+  }
 
-    .videoWrapper {
-      @include productionVideo;
-      width: 100vw;
-      height: 400px;
+  .descTitle {
+    display: none;
+  }
+
+  .videoWrapper {
+    margin-top: 50px;
+    @include productionVideo;
+    width: 100%;
+    height: 400px;
+  }
+
+  .content {
+    padding: 0 16px;
+    margin-top: 50px;
+  }
+
+  .text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.6px;
+  }
+
+  .productsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+
+    .item {
+      display: flex;
+      gap: 16px;
+
+      .itemMark {
+        margin-top: 11px;
+        border-top: 1px solid $primary-active-btn;
+        width: 30px;
+        min-width: 30px;
+      }
     }
   }
 }
 
 @media screen and (min-width: $tablet) {
   .container {
-    // flex-direction: row;
-    padding-bottom: 0;
+    margin-top: 100px;
 
-    .content {
-      padding-top: 173px;
-      padding-bottom: 28px;
-      h1 {
-        color: $primary-active-btn;
-        font-weight: 600;
-        font-size: 40px;
-        line-height: 48px;
-        position: absolute;
-        top: -479px;
-      }
-      h2 {
-        position: absolute;
-        top: 0;
-        width: max-content;
-        @include H2-t;
-      }
+    .line {
+      width: 140px;
     }
 
-    .bgImg {
-      max-width: 100vw;
+    .mobileTitle {
+      font-size: 40px;
+      line-height: 48px;
+      padding: 0 40px;
+    }
 
-      .videoWrapper {
-        @include productionVideo;
-        width: 100vw;
-        height: 500px;
-      }
+    .videoWrapper {
+      margin-top: 80px;
+      height: 500px;
+    }
+
+    .content {
+      padding: 0 40px;
+      margin-top: 80px;
+    }
+
+    .text {
+      font-size: 16px;
+      line-height: 22px;
     }
   }
 }
 
 @media screen and (min-width: $desktop-small) {
   .container {
-    flex-direction: row;
-    .content {
-      padding-top: 173px;
-      h1 {
-        color: $primary-active-btn;
-        font-weight: 600;
-        font-size: 40px;
-        line-height: 48px;
-        position: absolute;
-        top: -24px;
-        left: -270px;
-      }
-      h2 {
-        right: 140px;
-        top: 30px;
-        @include H2-d;
-      }
+    .mobileTitle {
+      font-size: 48px;
+      line-height: 58px;
     }
-    .bgImg {
-      // min-width: 30px;
-      // height: 100%;
 
-      .videoWrapper {
-        @include productionVideo;
-        width: 420px;
-        height: 600px;
-      }
+    .playerWrapper {
+      padding: 0 40px;
+    }
+
+    .videoWrapper {
+      height: 600px;
     }
   }
 }
 
 @media screen and (min-width: $desktop-medium) {
   .container {
-    .content {
-      padding-top: 249px;
-      h1 {
-        color: $primary-active-btn;
-        font-weight: 600;
-        font-size: 48px;
-        line-height: 58px;
-        position: absolute;
-        top: -29px;
-        left: -340px;
-      }
-      h2 {
-        top: 100px;
-        right: 210px;
-      }
-    }
-    .bgImg {
-      min-width: 760px;
-      height: 100%;
+    margin-top: 200px;
 
-      .videoWrapper {
-        @include productionVideo;
-        width: 760px;
-        height: 800px;
-      }
+    .mobileTitle {
+      display: none;
+    }
+
+    .descTitle {
+      display: block;
+      color: $primary-active-btn;
+      font-size: 48px;
+      line-height: 58px;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .contentWrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding: 0 40px;
+      margin-top: 45px;
+    }
+
+    .playerWrapper {
+      padding: 0;
+    }
+
+    .videoWrapper {
+      margin-top: 0;
+      width: 700px;
+      height: 600px;
+    }
+
+    .content {
+      padding: 0;
+      margin-top: 0;
+      width: 550px;
     }
   }
 }
 
 @media screen and (min-width: $desktop-large) {
   .container {
-    .content {
-      h1 {
-        color: $primary-active-btn;
-        font-weight: 600;
-        font-size: 48px;
-        line-height: 58px;
-        position: absolute;
-        top: -29px;
-        left: -380px;
-      }
-      h2 {
-        right: 250px;
-      }
+    .contentWrapper {
+      padding: 0 70px;
     }
-    .bgImg {
-      min-width: 1000px;
-      height: 100%;
 
-      .videoWrapper {
-        @include productionVideo;
-        width: 1000px;
-        height: 800px;
-      }
+    .videoWrapper {
+      margin-top: 0;
+      width: 1000px;
+      height: 600px;
     }
   }
 }
