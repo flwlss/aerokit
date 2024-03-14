@@ -3,36 +3,37 @@
 
 .container {
   margin-top: 50px;
+  padding-bottom: 60px;
 
-  .arrows {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-  }
+  // .arrows {
+  //   display: flex;
+  //   justify-content: flex-end;
+  //   margin-bottom: 20px;
+  // }
 
-  .activeArrow {
-    cursor: pointer;
+  // .activeArrow {
+  //   cursor: pointer;
 
-    path {
-      fill: #fff;
-    }
+  //   path {
+  //     fill: #fff;
+  //   }
 
-    &:last-child {
-      margin-left: 24px;
-    }
-  }
+  //   &:last-child {
+  //     margin-left: 24px;
+  //   }
+  // }
 
-  .inactiveArrow {
-    cursor: pointer;
+  // .inactiveArrow {
+  //   cursor: pointer;
 
-    path {
-      fill: #aeaeae;
-    }
+  //   path {
+  //     fill: #aeaeae;
+  //   }
 
-    &:last-child {
-      margin-left: 24px;
-    }
-  }
+  //   &:last-child {
+  //     margin-left: 24px;
+  //   }
+  // }
 
   .videoWrapper {
     @include productionVideo;
@@ -45,6 +46,7 @@
     flex-direction: column;
     gap: 12px;
     margin-top: 50px;
+    padding: 0 16px;
 
     .item {
       display: flex;
@@ -61,49 +63,52 @@
 
 @media screen and (min-width: $tablet) {
   .container {
-    margin-top: 25px;
+    margin-top: 75px;
+
+    .playerWrapper {
+      padding: 0 40px;
+    }
 
     .videoWrapper {
       height: 400px;
+    }
+
+    .productsList {
+      margin-top: 75px;
+      padding: 0 40px;
     }
   }
 }
 
 @media screen and (min-width: $desktop-small) {
   .container {
-    display: flex;
-    flex-direction: row-reverse;
-
-    .playerWrapper {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .productsList {
-      margin-right: 44px;
-    }
-
     .videoWrapper {
-      @include productionVideo;
-      width: 500px;
-      height: 300px;
+      width: 100%;
+      height: 600px;
     }
   }
 }
 
 @media screen and (min-width: $desktop-medium) {
   .container {
-    justify-content: right;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 25px;
+
+    .playerWrapper {
+      padding: 0 40px 0 0;
+    }
 
     .productsList {
-      margin-top: 100px;
-      margin-right: -90px;
-      z-index: 2;
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      padding: 0 0 0 40px;
     }
 
     .videoWrapper {
-      @include productionVideo;
-      width: 800px;
+      width: 900px;
       height: 600px;
     }
   }
@@ -111,8 +116,17 @@
 
 @media screen and (min-width: $desktop-large) {
   .container {
+    .playerWrapper {
+      padding: 0 70px 0 0;
+    }
+
     .productsList {
-      margin-right: 300px;
+      padding: 0 0 0 70px;
+    }
+
+    .videoWrapper {
+      width: 1200px;
+      height: 600px;
     }
   }
 }

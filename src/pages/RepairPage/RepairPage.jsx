@@ -21,10 +21,12 @@ export default function RepairPage() {
   );
 
   return (
-    <div className={styles.container}>
-      <SlideButtons currentTab={currentTab} setCurrentTab={setCurrentTab} />
+    <>
+      <div className={styles.container}>
+        <SlideButtons currentTab={currentTab} setCurrentTab={setCurrentTab} />
+      </div>
       {currentTab === "electronic" && <Electromechanics />}
       {currentTab === "main" && <Wheels />}
-    </div>
+    </>
   );
 }

@@ -11,12 +11,12 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 52px 16px;
+  padding: 52px 16px 0 16px;
 }
 
 @media screen and (min-width: $tablet) {
   .container {
-    padding: 100px 40px 52px 40px;
+    padding: 100px 40px 0 40px;
   }
 }
 
@@ -30,7 +30,7 @@
 
 @media screen and (min-width: $desktop-large) {
   .container {
-    padding: 100px 70px 85px 70px;
+    padding: 100px 70px 0 70px;
   }
 }
 

@@ -3,36 +3,37 @@
 
 .container {
   margin-top: 50px;
+  padding-bottom: 60px;
 
-  .arrows {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-  }
+  // .arrows {
+  //   display: flex;
+  //   justify-content: flex-end;
+  //   margin-bottom: 20px;
+  // }
 
-  .activeArrow {
-    cursor: pointer;
+  // .activeArrow {
+  //   cursor: pointer;
 
-    path {
-      fill: #fff;
-    }
+  //   path {
+  //     fill: #fff;
+  //   }
 
-    &:last-child {
-      margin-left: 24px;
-    }
-  }
+  //   &:last-child {
+  //     margin-left: 24px;
+  //   }
+  // }
 
-  .inactiveArrow {
-    cursor: pointer;
+  // .inactiveArrow {
+  //   cursor: pointer;
 
-    path {
-      fill: #aeaeae;
-    }
+  //   path {
+  //     fill: #aeaeae;
+  //   }
 
-    &:last-child {
-      margin-left: 24px;
-    }
-  }
+  //   &:last-child {
+  //     margin-left: 24px;
+  //   }
+  // }
 
   .videoWrapper {
     @include productionVideo;
@@ -42,10 +43,13 @@
 
   .content {
     margin-top: 50px;
+    padding: 0 16px;
 
     h2 {
-      @include H2-m;
-      margin-bottom: 40px;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 500;
+      margin-bottom: 25px;
 
       span {
         @include inheritFont;
@@ -56,8 +60,7 @@
     .productsList {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-top: 50px;
+      gap: 24px;
 
       .item {
         display: flex;
@@ -75,61 +78,54 @@
 
 @media screen and (min-width: $tablet) {
   .container {
-    margin-top: 25px;
+    margin-top: 75px;
 
-    .content {
-      h2 {
-        font-size: 28px;
-      }
+    .playerWrapper {
+      padding: 0 40px;
     }
 
     .videoWrapper {
       height: 400px;
+    }
+
+    .content {
+      margin-top: 75px;
+      padding: 0 40px;
     }
   }
 }
 
 @media screen and (min-width: $desktop-small) {
   .container {
-    display: flex;
-    flex-direction: row-reverse;
-
-    .playerWrapper {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .content {
-      width: 400px;
-      margin-right: 44px;
-    }
-
     .videoWrapper {
-      @include productionVideo;
-      width: 500px;
-      height: 300px;
+      width: 100%;
+      height: 600px;
     }
   }
 }
 
 @media screen and (min-width: $desktop-medium) {
   .container {
-    justify-content: right;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 25px;
+
+    .playerWrapper {
+      padding: 0 40px 0 0;
+    }
 
     .content {
-      margin-top: 75px;
-      width: 600px;
-      margin-right: -300px;
-      z-index: 2;
-
-      h2 {
-        font-size: 30px;
-      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 0;
+      width: 440px;
+      padding: 0 0 0 40px;
     }
 
     .videoWrapper {
-      @include productionVideo;
-      width: 800px;
+      width: 900px;
       height: 600px;
     }
   }
@@ -137,8 +133,17 @@
 
 @media screen and (min-width: $desktop-large) {
   .container {
+    .playerWrapper {
+      padding: 0 70px 0 0;
+    }
+
     .content {
-      margin-right: 90px;
+      padding: 0 0 0 70px;
+    }
+
+    .videoWrapper {
+      width: 1200px;
+      height: 600px;
     }
   }
 }

@@ -1,6 +1,6 @@
 import styles from "./style.module.scss";
 import { useEffect, useRef, useState } from "react";
-import Arrow from "/src/assets/svg/slideArrow.svg?react";
+// import Arrow from "/src/assets/svg/slideArrow.svg?react";
 
 export default function Wheels() {
   const videoRef = useRef(null);
@@ -13,38 +13,38 @@ export default function Wheels() {
     "Irkut - SJ100",
   ];
 
-  const videos = [
-    "/videos/wheels/video1.mp4",
-    "/videos/wheels/video2.mp4",
-    "/videos/wheels/video3.mp4",
-    "/videos/wheels/video4.mp4",
-    "/videos/wheels/video5.mp4",
-  ];
+  // const videos = [
+  //   "/videos/wheels/video1.mp4",
+  //   "/videos/wheels/video2.mp4",
+  //   "/videos/wheels/video3.mp4",
+  //   "/videos/wheels/video4.mp4",
+  //   "/videos/wheels/video5.mp4",
+  // ];
 
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  // const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
-  const handleNextVideo = () => {
-    if (currentVideoIndex < videos.length - 1) {
-      setCurrentVideoIndex(currentVideoIndex + 1);
-    }
-  };
+  // const handleNextVideo = () => {
+  //   if (currentVideoIndex < videos.length - 1) {
+  //     setCurrentVideoIndex(currentVideoIndex + 1);
+  //   }
+  // };
 
-  const handlePrevVideo = () => {
-    if (currentVideoIndex > 0) {
-      setCurrentVideoIndex(currentVideoIndex - 1);
-    }
-  };
+  // const handlePrevVideo = () => {
+  //   if (currentVideoIndex > 0) {
+  //     setCurrentVideoIndex(currentVideoIndex - 1);
+  //   }
+  // };
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play();
     }
-  }, [currentVideoIndex]);
+  }, []);
 
   return (
     <div className={styles.container}>
       <div className={styles.playerWrapper}>
-        <div className={styles.arrows}>
+        {/* <div className={styles.arrows}>
           <Arrow
             onClick={handlePrevVideo}
             className={
@@ -62,7 +62,7 @@ export default function Wheels() {
                 : styles.inactiveArrow
             }
           />
-        </div>
+        </div> */}
         <div className={styles.videoWrapper}>
           <video
             loop
@@ -72,7 +72,8 @@ export default function Wheels() {
             ref={videoRef}
             width="0"
             height="0"
-            src={videos[currentVideoIndex]}
+            src={"/videos/wheels/video5.mp4"}
+            // src={videos[currentVideoIndex]}
           >
             <source type="video/mp4" />
           </video>
