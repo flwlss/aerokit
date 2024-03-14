@@ -27,7 +27,15 @@ export default function ProductionPage() {
     <div className={styles.container}>
       <div className={styles.bgImg}>
         <div className={styles.videoWrapper}>
-          <video loop muted ref={videoRef} width="0" height="0">
+          <video
+            controls={false}
+            playsInline
+            loop
+            muted
+            ref={videoRef}
+            width="0"
+            height="0"
+          >
             <source src="/videos/prod/video.mp4" type="video/mp4" />
           </video>
         </div>

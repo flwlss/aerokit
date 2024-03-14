@@ -66,6 +66,8 @@ export default function Wheels() {
         <div className={styles.videoWrapper}>
           <video
             loop
+            controls={false}
+            playsInline
             muted
             ref={videoRef}
             width="0"

@@ -73,6 +73,8 @@ export default function Electromechanics() {
         </div>
         <div className={styles.videoWrapper}>
           <video
+            controls={false}
+            playsInline
             loop
             muted
             ref={videoRef}
