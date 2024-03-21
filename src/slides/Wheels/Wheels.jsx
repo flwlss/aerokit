@@ -72,7 +72,7 @@ export default function Wheels() {
             ref={videoRef}
             width="0"
             height="0"
-            src={"/videos/wheels/video5.mp4"}
+            src={"/videos/wheels/video7.mp4"}
             // src={videos[currentVideoIndex]}
           >
             <source type="video/mp4" />

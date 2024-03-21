@@ -80,7 +80,7 @@ export default function Electromechanics() {
             ref={videoRef}
             width="0"
             height="0"
-            src={"/videos/electromechanics/video1.mp4"}
+            src={"/videos/electromechanics/video2.mp4"}
             // src={videos[currentVideoIndex]}
           >
             <source type="video/mp4" />
