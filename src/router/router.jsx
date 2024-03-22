@@ -26,10 +26,10 @@ export const router = createBrowserRouter([
             path: '',
             element: <ActivityPage />
           },
-          {
-            path: 'management',
-            element: <ManagementPage />
-          },
+          // {
+          //   path: 'management',
+          //   element: <ManagementPage />
+          // },
         ]
       },
       {

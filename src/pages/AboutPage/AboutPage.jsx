@@ -42,7 +42,7 @@ export default function AboutPage() {
             />
           </svg>
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="management"
           className={({ isActive }) =>
             `${styles.subNavItem} ${isActive ? styles.active : ""}`
@@ -69,7 +69,7 @@ export default function AboutPage() {
               fill="#FFF"
             />
           </svg>
-        </NavLink>
+        </NavLink> */}
       </nav>
       <div className={styles.content}>
         <Outlet />
