@@ -3,14 +3,29 @@ import styles from "./style.module.scss";
 import { useState, useRef } from "react";
 import Cross from "/src/assets/svg/cross.svg?react";
 import File from "/src/assets/svg/file.svg?react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function RepairForm() {
   const fileInputRef = useRef(null);
 
   const [documents, setDocuments] = useState([]);
+  const [formatError, setFormatError] = useState(false);
+  const [captValue, setCaptValue] = useState(null);
 
   const handleFileChange = (event) => {
     const files = event.target.files;
+    const allowedFormats = ["pdf", "jpg", "jpeg", "png"];
+    const fileFormats = Array.from(files).map((file) =>
+      file.name.split(".").pop()
+    );
+    const isValidFormat = fileFormats.every((format) =>
+      allowedFormats.includes(format)
+    );
+    if (!isValidFormat) {
+      setFormatError(true);
+      return;
+    }
+    setFormatError(false);
     setDocuments([...documents, ...files]);
     fileInputRef.current.value = "";
   };
@@ -90,6 +105,9 @@ export default function RepairForm() {
           id="files"
           type="file"
         />
+        {formatError && (
+          <p className={styles.error}>Доступные форматы: pdf, jpeg, png</p>
+        )}
       </div>
       <div className={styles.fileWrapper}>
         {documents.map((file, index) => (
@@ -102,8 +120,14 @@ export default function RepairForm() {
           </div>
         ))}
       </div>
+      <ReCAPTCHA
+        onChange={(val) => setCaptValue(val)}
+        sitekey="6LfYzOEpAAAAAPwUiwuzH3Osqxb1yL-rVo0ULDoA"
+      />
       <div className={styles.submitBtnContainer}>
-        <RequestButton onClick={() => {}}>Отправить</RequestButton>
+        <RequestButton disabled={!captValue} onClick={() => {}}>
+          Отправить
+        </RequestButton>
       </div>
     </form>
   );

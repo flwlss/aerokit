@@ -97,6 +97,11 @@
   .submitBtnContainer {
     margin-top: 30px;
   }
+
+  .error {
+    font-size: 14px;
+    color: #eb2424;
+  }
 }
 
 @media screen and (min-width: $tablet) {

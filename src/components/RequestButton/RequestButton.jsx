@@ -1,7 +1,9 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
-export default function RequestButton({children, onClick}) {
+export default function RequestButton({ children, onClick, disabled }) {
   return (
-    <button className={styles.button} onClick={onClick}>{children}</button>
-  )
+    <button disabled={disabled} className={styles.button} onClick={onClick}>
+      {children}
+    </button>
+  );
 }

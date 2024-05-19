@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./style.module.scss";
 import RequestForm from "../RequestForm/RequestForm";
 import RepairForm from "../RepairForm/RepairForm";
-import cross from "../../assets/svg/cross.svg"
+import cross from "../../assets/svg/cross.svg";
 
 const formTypes = {
   PRODUCTION: "production",
@@ -34,10 +34,12 @@ export default function RequestModal({ onClose }) {
             </span>
           </div>
         </header>
-        {
-          currentForm === formTypes.PRODUCTION ? <RequestForm/> : <RepairForm/>
-        }
-      <img src={cross} alt="exit" className={styles.exit} onClick={onClose}/>
+        {currentForm === formTypes.PRODUCTION ? (
+          <RequestForm />
+        ) : (
+          <RepairForm />
+        )}
+        <img src={cross} alt="exit" className={styles.exit} onClick={onClose} />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-@import '../../variables.scss';
-@import '../../mixins.scss';
+@import "../../variables.scss";
+@import "../../mixins.scss";
 
 .button {
   @include L-M-d;
@@ -10,6 +10,11 @@
   border-radius: 8px;
   background-color: $primary-active-btn;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
 
   &:hover {
     background-color: $secondary-active-btn;
